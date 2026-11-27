@@ -2,7 +2,7 @@ package fr.juke.crosshairbobbing;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.fabricmc.loader.api.FabricLoader;
+import net.neoforged.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -73,7 +73,7 @@ public final class Config {
     }
 
     private static Path file() {
-        return FabricLoader.getInstance().getConfigDir().resolve("crosshair-bobbing-continued.json");
+        return FMLPaths.CONFIGDIR.get().resolve("crosshair-bobbing-continued.json");
     }
 
     private void sanitize() {
