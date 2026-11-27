@@ -88,7 +88,7 @@ The config is created at `config/crosshair-bobbing-continued.json` the first tim
 Edit the file and restart the game to apply changes. The **B** key toggles `enabled` immediately
 and saves the file for you.
 
-## Why a Reborn version?
+## Why a Continued version?
 
 The original Crosshair Bobbing was last published for Minecraft 1.20.2 and has millions of
 downloads. This project keeps the same behaviour and ideas, adds configuration, and ports the
@@ -99,7 +99,7 @@ against modern Minecraft and does not use the original project's custom loader.
 
 - Original mod: [Crosshair Bobbing](https://modrinth.com/mod/xbob) by **Krash220**
   ([source](https://github.com/Krash220/CrosshairBobbingMod)).
-- Reborn port and maintenance: **jukefr**.
+- Continued port and maintenance: **jukefr**.
 
 Because the original is licensed under **GPL-3.0-only**, this project is also licensed under
 **GPL-3.0-only**. The full license is in [LICENSE](LICENSE), and the source is published in this
