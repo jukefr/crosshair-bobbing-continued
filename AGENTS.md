@@ -4,16 +4,16 @@ Instructions for future agents working on this repository.
 
 ## Project overview
 
-Crosshair Bobbing Reborn (`crosshair-bobbing-reborn`) is a **client-side only** Fabric mod that
+Crosshair Bobbing Continued (`crosshair-bobbing-continued`) is a **client-side only** Fabric mod that
 makes the crosshair follow Minecraft's view bobbing and adds optional action animations.
 
-- Display name: Crosshair Bobbing Reborn
-- Mod id: `crosshair-bobbing-reborn` (same on every branch)
+- Display name: Crosshair Bobbing Continued
+- Mod id: `crosshair-bobbing-continued` (same on every branch)
 - Main package: `fr.juke.crosshairbobbing`
-- Client entrypoint: `fr.juke.crosshairbobbing.CrosshairBobbingReborn`
-- Config file: `config/crosshair-bobbing-reborn.json`
-- GitHub: https://github.com/jukefr/crosshair-bobbing-reborn
-- Modrinth: https://modrinth.com/mod/crosshair-bobbing-reborn (project id: ask the user — a new
+- Client entrypoint: `fr.juke.crosshairbobbing.CrosshairBobbingContinued`
+- Config file: `config/crosshair-bobbing-continued.json`
+- GitHub: https://github.com/jukefr/crosshair-bobbing-continued
+- Modrinth: https://modrinth.com/mod/crosshair-bobbing-continued (project id: ask the user — a new
   Modrinth project cannot be created through the API)
 - License: **GPL-3.0-only**
 
@@ -133,7 +133,7 @@ Keep `CrosshairAnimation` free of Minecraft-version APIs. Add a helper to `Playe
 
 Build every branch. Then run a real client on each branch and confirm:
 
-1. The log contains `Crosshair Bobbing Reborn loaded (enabled=true)`.
+1. The log contains `Crosshair Bobbing Continued loaded (enabled=true)`.
 2. No `Mixin apply failed`, `InvalidInjectionException`, or `InjectionError` line appears.
 3. An integrated world starts and the player joins (`Starting integrated minecraft server`
    followed by `joined the game`).
@@ -166,7 +166,7 @@ Manual visual checks (do these before a release when changing the maths):
 5. Update the Minecraft dependency in `fabric.mod.json` when a branch's version range changes.
 6. Commit and push all branches.
 7. Create grouped tags per version range and GitHub releases with jars renamed as
-   `crosshair-bobbing-reborn-<version>+mc<range>.jar`.
+   `crosshair-bobbing-continued-<version>+mc<range>.jar`.
 8. Publish separate Modrinth versions per Minecraft range. Use the `fabric` loader and the
    `client` environment. `version_number` must be unique per project, for example
    `1.0.0+mc26.2`.
@@ -182,8 +182,8 @@ git worktree remove --force /tmp/opencode/cbr-1.21.1
 
 ## Modrinth
 
-- Slug: `crosshair-bobbing-reborn`
-- Title: `Crosshair Bobbing Reborn`
+- Slug: `crosshair-bobbing-continued`
+- Title: `Crosshair Bobbing Continued`
 - Environment: `client_only`
 - Loaders: `["fabric"]`
 - License: GPL-3.0-only
@@ -206,7 +206,7 @@ use a unique `version_number` per loader/range.
   `GuiGraphicsExtractor`; do not look for `GuiGraphics` drawing calls there.
 - **1.21.11 already uses `Matrix3x2fStack`**, not `PoseStack`. Do not copy the 1.21.1 mixin as-is.
 - **26.3 uses SDL, not GLFW.** Use `InputConstants.KEY_*`.
-- **Mod id is `crosshair-bobbing-reborn`** on disk and in `fabric.mod.json`; do not rename it
+- **Mod id is `crosshair-bobbing-continued`** on disk and in `fabric.mod.json`; do not rename it
   without a migration plan for config paths.
 - **GPL.** Never relicense this repository or copy code from an incompatible mod into it.
 - `.env` and `run/` are gitignored. Keep them out of commits.

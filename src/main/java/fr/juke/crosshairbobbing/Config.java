@@ -73,7 +73,7 @@ public final class Config {
     }
 
     private static Path file() {
-        return FabricLoader.getInstance().getConfigDir().resolve("crosshair-bobbing-reborn.json");
+        return FabricLoader.getInstance().getConfigDir().resolve("crosshair-bobbing-continued.json");
     }
 
     private void sanitize() {
