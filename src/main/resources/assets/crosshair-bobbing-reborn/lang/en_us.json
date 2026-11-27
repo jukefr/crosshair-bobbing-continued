@@ -1,0 +1,7 @@
+{
+  "key.crosshair-bobbing-reborn.toggle": "Toggle crosshair bobbing",
+  "key.category.crosshair-bobbing-reborn.main": "Crosshair Bobbing Reborn",
+  "crosshair-bobbing-reborn.toggle": "Crosshair bobbing: %s",
+  "crosshair-bobbing-reborn.state.on": "ON",
+  "crosshair-bobbing-reborn.state.off": "OFF"
+}

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "fr.juke.crosshairbobbing.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "HudMixin",
+    "GameModeMixin",
+    "LivingEntityAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,57 @@
+package fr.juke.crosshairbobbing;
+
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import com.mojang.blaze3d.platform.InputConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * Client entrypoint: loads the config and registers the toggle keybind.
+ */
+public final class CrosshairBobbingReborn implements ClientModInitializer {
+    public static final String MOD_ID = "crosshair-bobbing-reborn";
+    public static final Logger LOGGER = LoggerFactory.getLogger("Crosshair Bobbing Reborn");
+
+    private static KeyMapping toggleKey;
+
+    @Override
+    public void onInitializeClient() {
+        Config.load(LOGGER);
+
+        KeyMapping.Category category = KeyMapping.Category.register(
+                Identifier.fromNamespaceAndPath(MOD_ID, "main"));
+        toggleKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
+                "key.crosshair-bobbing-reborn.toggle",
+                InputConstants.KEY_B,
+                category));
+
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            while (toggleKey.consumeClick()) {
+                Config config = Config.get();
+                config.enabled = !config.enabled;
+                Config.save(LOGGER);
+                if (client.player != null) {
+                    Component state = Component.translatable(config.enabled
+                                    ? "crosshair-bobbing-reborn.state.on"
+                                    : "crosshair-bobbing-reborn.state.off")
+                            .withStyle(config.enabled ? ChatFormatting.GREEN : ChatFormatting.RED);
+                    client.player.sendOverlayMessage(
+                            Component.translatable("crosshair-bobbing-reborn.toggle", state));
+                }
+            }
+        });
+
+        LOGGER.info("Crosshair Bobbing Reborn loaded (enabled={})", Config.get().enabled);
+    }
+
+    public static Minecraft minecraft() {
+        return Minecraft.getInstance();
+    }
+}

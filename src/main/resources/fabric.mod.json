@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "crosshair-bobbing-reborn",
+  "version": "${version}",
+  "name": "Crosshair Bobbing Reborn",
+  "description": "Makes the crosshair follow view bobbing and react to sneak, item switches, attacks, eating, bows and crossbows. Client-side only.",
+  "authors": [
+    "jukefr"
+  ],
+  "contributors": [
+    "Krash220"
+  ],
+  "contact": {
+    "homepage": "https://github.com/jukefr/crosshair-bobbing-reborn",
+    "sources": "https://github.com/jukefr/crosshair-bobbing-reborn",
+    "issues": "https://github.com/jukefr/crosshair-bobbing-reborn/issues"
+  },
+  "license": "GPL-3.0-only",
+  "icon": "assets/crosshair-bobbing-reborn/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "fr.juke.crosshairbobbing.CrosshairBobbingReborn"
+    ]
+  },
+  "mixins": [
+    "crosshair-bobbing-reborn.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "java": ">=25",
+    "minecraft": ">=26.2 <26.4",
+    "fabric-api": "*"
+  }
+}
