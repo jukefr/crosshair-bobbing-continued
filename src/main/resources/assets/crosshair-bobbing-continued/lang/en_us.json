@@ -3,5 +3,6 @@
   "key.category.crosshair-bobbing-continued.main": "Crosshair Bobbing Continued",
   "crosshair-bobbing-continued.toggle": "Crosshair bobbing: %s",
   "crosshair-bobbing-continued.state.on": "ON",
-  "crosshair-bobbing-continued.state.off": "OFF"
+  "crosshair-bobbing-continued.state.off": "OFF",
+  "key.categories.crosshair-bobbing-continued": "Crosshair Bobbing Continued"
 }
