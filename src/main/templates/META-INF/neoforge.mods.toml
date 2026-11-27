@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="${mod_license}"
+issueTrackerURL="https://github.com/jukefr/crosshair-bobbing-continued/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="jukefr"
+credits="Krash220 (original Crosshair Bobbing)"
+iconFile="assets/crosshair-bobbing-continued/icon.png"
+displayURL="https://modrinth.com/mod/crosshair-bobbing-continued"
+displayTest="IGNORE_ALL_VERSION"
+description='''
+Makes the crosshair follow view bobbing, with sneak, attack, item switch, eating, bow, crossbow and riptide animations. Client-side only.
+'''
+
+[[mixins]]
+config="crosshair-bobbing-continued.mixins.json"
+
+[[dependencies.${mod_id}]]
+modId="neoforge"
+type="required"
+versionRange="[${neo_version},)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="CLIENT"
