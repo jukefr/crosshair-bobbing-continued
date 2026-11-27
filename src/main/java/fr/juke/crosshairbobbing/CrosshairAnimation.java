@@ -117,7 +117,7 @@ public final class CrosshairAnimation {
         Vector4f centre = new Vector4f(0.0f, 0.0f, -depth, 1.0f).mul(transform);
         Vector4f up = new Vector4f(0.0f, 1.0f, -depth, 1.0f).mul(transform);
 
-        float fov = PlayerState.fov(minecraft);
+        float fov = PlayerState.fov(minecraft, partialTick);
         if (!(fov > 1.0f) || !(fov < 179.0f)) {
             fov = 70.0f;
         }

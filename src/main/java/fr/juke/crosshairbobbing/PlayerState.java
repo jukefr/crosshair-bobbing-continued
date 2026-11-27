@@ -1,5 +1,6 @@
 package fr.juke.crosshairbobbing;
 
+import fr.juke.crosshairbobbing.mixin.GameRendererAccessor;
 import fr.juke.crosshairbobbing.mixin.LivingEntityAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -27,7 +28,7 @@ final class PlayerState {
     }
 
     static float swingProgress(LocalPlayer player, float partialTicks) {
-        return player.getSwingAnimation(partialTicks);
+        return player.getAttackAnim(partialTicks);
     }
 
     static UseKind useKind(LocalPlayer player) {
@@ -80,8 +81,9 @@ final class PlayerState {
         return player.getPose() == Pose.CROUCHING || player.isCrouching();
     }
 
-    static float fov(Minecraft minecraft) {
-        return minecraft.gameRenderer.mainCamera().getFov();
+    static float fov(Minecraft minecraft, float partialTicks) {
+        return ((GameRendererAccessor) minecraft.gameRenderer)
+                .crosshairBobbing$getFov(minecraft.gameRenderer.getMainCamera(), partialTicks, true);
     }
 
     enum UseKind {

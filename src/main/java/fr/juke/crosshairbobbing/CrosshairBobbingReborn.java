@@ -1,7 +1,7 @@
 package fr.juke.crosshairbobbing;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
@@ -27,7 +27,7 @@ public final class CrosshairBobbingReborn implements ClientModInitializer {
 
         KeyMapping.Category category = KeyMapping.Category.register(
                 Identifier.fromNamespaceAndPath(MOD_ID, "main"));
-        toggleKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
+        toggleKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.crosshair-bobbing-reborn.toggle",
                 InputConstants.KEY_B,
                 category));
@@ -42,8 +42,8 @@ public final class CrosshairBobbingReborn implements ClientModInitializer {
                                     ? "crosshair-bobbing-reborn.state.on"
                                     : "crosshair-bobbing-reborn.state.off")
                             .withStyle(config.enabled ? ChatFormatting.GREEN : ChatFormatting.RED);
-                    client.player.sendOverlayMessage(
-                            Component.translatable("crosshair-bobbing-reborn.toggle", state));
+                    client.player.displayClientMessage(
+                            Component.translatable("crosshair-bobbing-reborn.toggle", state), true);
                 }
             }
         });
