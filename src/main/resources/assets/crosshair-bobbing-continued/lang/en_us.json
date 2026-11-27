@@ -1,0 +1,7 @@
+{
+  "key.crosshair-bobbing-continued.toggle": "Toggle crosshair bobbing",
+  "key.category.crosshair-bobbing-continued.main": "Crosshair Bobbing Continued",
+  "crosshair-bobbing-continued.toggle": "Crosshair bobbing: %s",
+  "crosshair-bobbing-continued.state.on": "ON",
+  "crosshair-bobbing-continued.state.off": "OFF"
+}
