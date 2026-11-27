@@ -1,12 +1,14 @@
 package fr.juke.crosshairbobbing;
 
+import fr.juke.crosshairbobbing.mixin.GameRendererAccessor;
 import fr.juke.crosshairbobbing.mixin.LivingEntityAccessor;
+import net.minecraft.util.Mth;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.UseAnim;
 
 /**
  * Version-specific view of the local player's animation state.
@@ -19,15 +21,15 @@ final class PlayerState {
     }
 
     static float bob(LocalPlayer player, float partialTicks) {
-        return player.avatarState().getInterpolatedBob(partialTicks);
+        return Mth.lerp(partialTicks, player.oBob, player.bob);
     }
 
     static float backwardsWalkDistance(LocalPlayer player, float partialTicks) {
-        return player.avatarState().getBackwardsInterpolatedWalkDistance(partialTicks);
+        return -(player.walkDist + (player.walkDist - player.walkDistO) * partialTicks);
     }
 
     static float swingProgress(LocalPlayer player, float partialTicks) {
-        return player.getSwingAnimation(partialTicks);
+        return player.getAttackAnim(partialTicks);
     }
 
     static UseKind useKind(LocalPlayer player) {
@@ -35,14 +37,14 @@ final class PlayerState {
             return UseKind.NONE;
         }
         ItemStack stack = player.getUseItem();
-        ItemUseAnimation animation = stack.getUseAnimation();
-        if (animation == ItemUseAnimation.EAT || animation == ItemUseAnimation.DRINK) {
+        UseAnim animation = stack.getUseAnimation();
+        if (animation == UseAnim.EAT || animation == UseAnim.DRINK) {
             return UseKind.EATING;
         }
-        if (animation == ItemUseAnimation.BOW) {
+        if (animation == UseAnim.BOW) {
             return UseKind.BOW;
         }
-        if (animation == ItemUseAnimation.SPEAR || animation == ItemUseAnimation.TRIDENT) {
+        if (animation == UseAnim.SPEAR) {
             return UseKind.SPEAR;
         }
         if (stack.getItem() instanceof CrossbowItem && !CrossbowItem.isCharged(stack)) {
@@ -57,11 +59,10 @@ final class PlayerState {
         }
         ItemStack stack = player.getUseItem();
         float used = stack.getUseDuration(player) - (player.getUseItemRemainingTicks() - partialTicks + 1.0f);
-        if (stack.getUseAnimation() == ItemUseAnimation.BOW) {
+        if (stack.getUseAnimation() == UseAnim.BOW) {
             return Math.min(used / 20.0f, 1.0f);
         }
-        if (stack.getUseAnimation() == ItemUseAnimation.SPEAR
-                || stack.getUseAnimation() == ItemUseAnimation.TRIDENT) {
+        if (stack.getUseAnimation() == UseAnim.SPEAR) {
             return Math.min(used / 10.0f, 1.0f);
         }
         int duration = Math.max(1, stack.getUseDuration(player));
@@ -80,8 +81,9 @@ final class PlayerState {
         return player.getPose() == Pose.CROUCHING || player.isCrouching();
     }
 
-    static float fov(Minecraft minecraft) {
-        return minecraft.gameRenderer.mainCamera().getFov();
+    static float fov(Minecraft minecraft, float partialTicks) {
+        return (float) ((GameRendererAccessor) minecraft.gameRenderer)
+                .crosshairBobbing$getFov(minecraft.gameRenderer.getMainCamera(), partialTicks, true);
     }
 
     enum UseKind {
