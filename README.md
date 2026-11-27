@@ -1,6 +1,6 @@
 # Crosshair Bobbing Continued
 
-**Make the Minecraft crosshair follow view bobbing — with reaction animations for sneaking, attacks, item switches, eating, bows and crossbows. Client-side only, for Fabric.**
+**Make the Minecraft crosshair follow view bobbing — with reaction animations for sneaking, attacks, item switches, eating, bows and crossbows. Client-side only, for Fabric and NeoForge.**
 
 [![Modrinth](https://img.shields.io/modrinth/dt/crosshair-bobbing-continued?style=flat-square&logo=modrinth&label=Modrinth)](https://modrinth.com/mod/crosshair-bobbing-continued)
 [![GitHub release](https://img.shields.io/github/v/release/jukefr/crosshair-bobbing-continued?style=flat-square&logo=github)](https://github.com/jukefr/crosshair-bobbing-continued/releases)
@@ -32,10 +32,11 @@ It is a **client-side** mod. You do not need it on the server, and it does not c
 
 ## Installation
 
-1. Install **Fabric Loader** for your Minecraft version.
-2. Install [Fabric API](https://modrinth.com/mod/fabric-api).
-3. Download the jar for your Minecraft version from [Modrinth](https://modrinth.com/mod/crosshair-bobbing-continued)
-   or [GitHub Releases](https://github.com/jukefr/crosshair-bobbing-continued/releases).
+1. Install **Fabric Loader** or **NeoForge** for your Minecraft version.
+2. On Fabric, also install [Fabric API](https://modrinth.com/mod/fabric-api). NeoForge needs no extra API mod.
+3. Download the jar for your loader and Minecraft version from
+   [Modrinth](https://modrinth.com/mod/crosshair-bobbing-continued) or
+   [GitHub Releases](https://github.com/jukefr/crosshair-bobbing-continued/releases).
 4. Put the jar in your `mods/` folder and start the game.
 
 > This is a client-side mod. Servers do not need it, and it works on any server.
@@ -45,12 +46,12 @@ It is a **client-side** mod. You do not need it on the server, and it does not c
 | Loader | Minecraft versions |
 |---|---|
 | Fabric | 1.21.1, 1.21.11, 26.1–26.1.2, 26.2–26.3 |
+| NeoForge | 1.21.1, 1.21.11, 26.1.2, 26.2–26.3 |
 
-NeoForge is not supported yet. The config format and animations are loader-agnostic, so a NeoForge
-port is planned.
+NeoForge publishes 26.1.2, not 26.1 or 26.1.1; the 26.2–26.3 jar covers both 26.2 and 26.3.
 
-These versions cover the large majority of active Fabric players. Older versions are not included
-in the first release.
+These versions cover the large majority of active Fabric and NeoForge players. Older versions are
+not included.
 
 ## Configuration
 
