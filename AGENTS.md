@@ -22,7 +22,7 @@ The mod is a continuation of **Crosshair Bobbing** by Krash220
 original is GPL-3.0-only, so this repository **must stay GPL-3.0-only and must publish its source**.
 Keep the attribution in `README.md` and the Modrinth description.
 
-Do not reuse the original project's name, icon, or jar as-is. This is a Reborn continuation under
+Do not reuse the original project's name, icon, or jar as-is. This is a continuation under
 the original license, with a new icon and a rebuilt, version-specific implementation.
 
 ## The most important rule
