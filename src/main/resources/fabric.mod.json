@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "crosshair-bobbing-reborn",
+  "id": "crosshair-bobbing-continued",
   "version": "${version}",
-  "name": "Crosshair Bobbing Reborn",
+  "name": "Crosshair Bobbing Continued",
   "description": "Makes the crosshair follow view bobbing and react to sneak, item switches, attacks, eating, bows and crossbows. Client-side only.",
   "authors": [
     "jukefr"
@@ -11,20 +11,20 @@
     "Krash220"
   ],
   "contact": {
-    "homepage": "https://github.com/jukefr/crosshair-bobbing-reborn",
-    "sources": "https://github.com/jukefr/crosshair-bobbing-reborn",
-    "issues": "https://github.com/jukefr/crosshair-bobbing-reborn/issues"
+    "homepage": "https://github.com/jukefr/crosshair-bobbing-continued",
+    "sources": "https://github.com/jukefr/crosshair-bobbing-continued",
+    "issues": "https://github.com/jukefr/crosshair-bobbing-continued/issues"
   },
   "license": "GPL-3.0-only",
-  "icon": "assets/crosshair-bobbing-reborn/icon.png",
+  "icon": "assets/crosshair-bobbing-continued/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "fr.juke.crosshairbobbing.CrosshairBobbingReborn"
+      "fr.juke.crosshairbobbing.CrosshairBobbingContinued"
     ]
   },
   "mixins": [
-    "crosshair-bobbing-reborn.mixins.json"
+    "crosshair-bobbing-continued.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.20.1",

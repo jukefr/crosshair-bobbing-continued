@@ -1,12 +1,12 @@
-# Crosshair Bobbing Reborn
+# Crosshair Bobbing Continued
 
 **Make the Minecraft crosshair follow view bobbing — with reaction animations for sneaking, attacks, item switches, eating, bows and crossbows. Client-side only, for Fabric.**
 
-[![Modrinth](https://img.shields.io/modrinth/dt/crosshair-bobbing-reborn?style=flat-square&logo=modrinth&label=Modrinth)](https://modrinth.com/mod/crosshair-bobbing-reborn)
-[![GitHub release](https://img.shields.io/github/v/release/jukefr/crosshair-bobbing-reborn?style=flat-square&logo=github)](https://github.com/jukefr/crosshair-bobbing-reborn/releases)
-[![License](https://img.shields.io/badge/license-GPL--3.0--only-blue?style=flat-square)](https://github.com/jukefr/crosshair-bobbing-reborn/blob/main/LICENSE)
+[![Modrinth](https://img.shields.io/modrinth/dt/crosshair-bobbing-continued?style=flat-square&logo=modrinth&label=Modrinth)](https://modrinth.com/mod/crosshair-bobbing-continued)
+[![GitHub release](https://img.shields.io/github/v/release/jukefr/crosshair-bobbing-continued?style=flat-square&logo=github)](https://github.com/jukefr/crosshair-bobbing-continued/releases)
+[![License](https://img.shields.io/badge/license-GPL--3.0--only-blue?style=flat-square)](https://github.com/jukefr/crosshair-bobbing-continued/blob/main/LICENSE)
 
-Crosshair Bobbing Reborn is a maintained continuation of **Crosshair Bobbing** by Krash220.
+Crosshair Bobbing Continued is a maintained continuation of **Crosshair Bobbing** by Krash220.
 Vanilla Minecraft keeps the crosshair pinned to the centre of the screen while the camera bobs,
 so the crosshair no longer points where the camera is looking. This mod moves the crosshair with
 the camera, and adds small animations so it reacts to what you are doing.
@@ -34,8 +34,8 @@ It is a **client-side** mod. You do not need it on the server, and it does not c
 
 1. Install **Fabric Loader** for your Minecraft version.
 2. Install [Fabric API](https://modrinth.com/mod/fabric-api).
-3. Download the jar for your Minecraft version from [Modrinth](https://modrinth.com/mod/crosshair-bobbing-reborn)
-   or [GitHub Releases](https://github.com/jukefr/crosshair-bobbing-reborn/releases).
+3. Download the jar for your Minecraft version from [Modrinth](https://modrinth.com/mod/crosshair-bobbing-continued)
+   or [GitHub Releases](https://github.com/jukefr/crosshair-bobbing-continued/releases).
 4. Put the jar in your `mods/` folder and start the game.
 
 > This is a client-side mod. Servers do not need it, and it works on any server.
@@ -54,7 +54,7 @@ in the first release.
 
 ## Configuration
 
-The config is created at `config/crosshair-bobbing-reborn.json` the first time the game starts:
+The config is created at `config/crosshair-bobbing-continued.json` the first time the game starts:
 
 ```json
 {
