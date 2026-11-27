@@ -3,7 +3,7 @@ package fr.juke.crosshairbobbing.mixin;
 import fr.juke.crosshairbobbing.CrosshairAnimation;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.gui.Hud;
+import net.minecraft.client.gui.Gui;
 import org.joml.Matrix3x2fStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,8 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**
  * Wraps the vanilla crosshair render with our transform.
  */
-@Mixin(Hud.class)
-public class HudMixin {
+@Mixin(Gui.class)
+public class GuiMixin {
     private static final ThreadLocal<Boolean> ACTIVE = ThreadLocal.withInitial(() -> false);
 
     @Inject(method = "extractCrosshair", at = @At("HEAD"))

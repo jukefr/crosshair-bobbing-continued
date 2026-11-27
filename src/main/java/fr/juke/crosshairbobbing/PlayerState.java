@@ -27,7 +27,7 @@ final class PlayerState {
     }
 
     static float swingProgress(LocalPlayer player, float partialTicks) {
-        return player.getSwingAnimation(partialTicks);
+        return player.getAttackAnim(partialTicks);
     }
 
     static UseKind useKind(LocalPlayer player) {
@@ -81,7 +81,7 @@ final class PlayerState {
     }
 
     static float fov(Minecraft minecraft) {
-        return minecraft.gameRenderer.mainCamera().getFov();
+        return minecraft.gameRenderer.getMainCamera().getFov();
     }
 
     enum UseKind {

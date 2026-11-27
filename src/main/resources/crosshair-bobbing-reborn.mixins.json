@@ -4,7 +4,7 @@
   "package": "fr.juke.crosshairbobbing.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
-    "HudMixin",
+    "GuiMixin",
     "GameModeMixin",
     "LivingEntityAccessor"
   ],
