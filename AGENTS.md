@@ -259,6 +259,19 @@ Publishing follows the same `POST /v2/version` multipart flow documented in
 `~/Projects/death-messages/AGENTS.md`. List every supported game version in `game_versions`.
 NeoForge publishes exact versions: 1.21.1, 1.21.11, 26.1.2, 26.2, 26.3.
 
+## Icons and Modrinth art
+
+All project icons follow the shared family documented in [ICON.md](ICON.md):
+
+- 512 × 512 PNG rendered from `resources/icon.svg`; rounded 96 px corners, dark tinted gradient,
+  one bold white glyph, one accent colour, soft glow, no text.
+- This project's accent is **amber `#FFC857`** on a `#3D2E1C` → `#17110A` background. Do not
+  change it without updating ICON.md and the other projects' palettes.
+- Keep `resources/icon.png` and `src/main/resources/assets/crosshair-bobbing-continued/icon.png`
+  identical. The SVG is the source of truth.
+- Upload with `PATCH /v2/project/YLreMsL2/icon?ext=png`; success is `204 No Content`.
+- When adding or refreshing art, update ICON.md rather than inventing a separate style.
+
 ## Common pitfalls
 
 - **Do not apply the transform when `options.bobView()` is off.** The crosshair must stay centred.
