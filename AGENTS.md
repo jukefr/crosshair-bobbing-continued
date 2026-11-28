@@ -256,7 +256,7 @@ git worktree remove --force /tmp/opencode/cbr-neoforge-26.3
   Load it with `set -a; . ./.env; set +a`.
 
 Publishing follows the same `POST /v2/version` multipart flow documented in
-`~/Projects/death-messages/AGENTS.md`. List every supported game version in `game_versions`.
+`~/Projects/Grindset/mods/death-messages/AGENTS.md`. List every supported game version in `game_versions`.
 NeoForge publishes exact versions: 1.21.1, 1.21.11, 26.1.2, 26.2, 26.3.
 
 ## Icons and Modrinth art

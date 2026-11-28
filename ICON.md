@@ -59,7 +59,7 @@ The icon endpoint is `PATCH /v2/project/{id}/icon?ext=png` with the raw PNG as t
 A successful upload returns **204 No Content**.
 
 ```bash
-set -a; . ~/Projects/death-messages/.env; set +a
+set -a; . ~/Projects/Grindset/mods/death-messages/.env; set +a
 UA="jukefr/icon-maker/1.0 (code@juke.fr)"
 curl -X PATCH "https://api.modrinth.com/v2/project/<project-id>/icon?ext=png" \
   -A "$UA" -H "Authorization: $MODRINTH_TOKEN" \
